@@ -35,10 +35,8 @@ public class TestBiblioteca {
 		alumno.pedirLibro(libro2);
 		
 		Boolean valorObtenido=alumno.seguirRetirando();
-		System.out.println(valorObtenido);
 		assertFalse(valorObtenido);
 		
-	
 	}
 
 }

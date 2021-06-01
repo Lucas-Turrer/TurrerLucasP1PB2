@@ -1,6 +1,6 @@
 package ar.edu.unlam.TurrerLucasP1PB2;
 
-public class Libro {
+public abstract class Libro {
 	protected Integer codigo;
 	protected String nombre;
 	protected String autor;
@@ -11,4 +11,5 @@ public class Libro {
 		this.autor=autor;
 	}
 	
+	public abstract String fotocopiable();
 }

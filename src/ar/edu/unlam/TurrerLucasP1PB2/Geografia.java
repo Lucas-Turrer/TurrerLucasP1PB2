@@ -6,4 +6,9 @@ public class Geografia extends Libro {
 		super(codigo, nombre, autor);
 	}
 
+	@Override
+	public String fotocopiable() {
+		return "Es fotocopiable";
+	}
+
 }

@@ -6,4 +6,9 @@ public class Matematicas extends Libro {
 		super(codigo, nombre, autor);
 	}
 
+	@Override
+	public String fotocopiable() {
+		return "No es fotocopiable";
+	}
+
 }
