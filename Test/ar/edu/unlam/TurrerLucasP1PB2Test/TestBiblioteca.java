@@ -51,5 +51,23 @@ public class TestBiblioteca {
 		Boolean estadoDeLibro = libro1.disponibilidad(libro1);
 		assertFalse(estadoDeLibro);
 	}
+	
+	@Test
+	public void RegistroDePrestamos() {
+		Estudiante alumno = new Estudiante("Lucas", "Turrer", 37931874);
+		Historia libro1 = new Historia(001,"Los Andes", "San Martin");
+		Geografia libro2 = new Geografia(002, "Egipto", "Eduar");
+		Geografia libro3 = new Geografia(002, "Grecia", "Aristoteles");
+		
+		alumno.pedirLibro(libro1);
+		libro1.librosEnPrestamos(libro1);
+		alumno.pedirLibro(libro2);
+		libro2.librosEnPrestamos(libro2);
+		alumno.pedirLibro(libro3);
+		libro3.librosEnPrestamos(libro3);
+		
+		System.out.println(libro2.librosQueFuerosPrestados());
+		
+	}
 
 }

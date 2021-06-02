@@ -7,6 +7,7 @@ public abstract class Libro {
 	protected String nombre;
 	protected String autor;
 	protected ArrayList<Libro> librosEnPrestamo = new ArrayList<Libro>();
+	protected ArrayList<Libro> registroDeLibrosPrestados = new ArrayList<Libro>();
 	
 	public Libro(Integer codigo, String nombre, String autor) {
 		this.codigo=codigo;
@@ -42,6 +43,7 @@ public abstract class Libro {
 	
 	public void librosEnPrestamos(Libro libro) {
 		librosEnPrestamo.add(libro);
+		registroDeLibrosPrestados.add(libro);
 	}
 	
 	public Boolean disponibilidad(Libro libro) {
@@ -51,6 +53,13 @@ public abstract class Libro {
 			}
 		}
 		return true;
+	}
+	
+	public String librosQueFuerosPrestados() {
+		for (Libro libros : registroDeLibrosPrestados) {
+			return libros.getNombre();
+		}
+		return null;
 	}
 
 	
