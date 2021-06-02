@@ -36,7 +36,20 @@ public class TestBiblioteca {
 		
 		Boolean valorObtenido=alumno.seguirRetirando();
 		assertFalse(valorObtenido);
+	}
+	
+	@Test
+	public void QueNoSePuedePedirUnLibroPestado() {
+		Estudiante alumno = new Estudiante("Lucas", "Turrer", 37931874);
+		Estudiante alumno2 = new Estudiante("Jose", "Perez", 37931873);
+		Historia libro1 = new Historia(001,"Los Andes", "San Martin");
+		Geografia libro2 = new Geografia(002, "Egipto", "Eduar");
 		
+		alumno.pedirLibro(libro1);
+		libro1.librosEnPrestamos(libro1);
+		
+		Boolean estadoDeLibro = libro1.disponibilidad(libro1);
+		assertFalse(estadoDeLibro);
 	}
 
 }
